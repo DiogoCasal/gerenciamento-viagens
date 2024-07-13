@@ -1,11 +1,12 @@
 import { AtSign, Plus, X } from "lucide-react"
 import { FormEvent } from "react"
+import { Button } from "../../components/button"
 
 interface InviteGuestsModalProps {
     closeGuestsModal: () => void
     emailsToInvite: string[]
     addNewEmailToInvite: (event: FormEvent<HTMLFormElement>) => void
-    removeEmailFromInvites: (email:string) => void
+    removeEmailFromInvites: (email: string) => void
 }
 
 // desestruturacao abaixo, poderia ser feito tambem apenas usando props:InviteGuestsModalProps e acessando depois cada um dos elementos desestruturados
@@ -51,10 +52,10 @@ export function InviteGuestsModal({
                         <input type="email" name='email' placeholder="Digite o e-mail do convidado" className="bg-transparent text-lg placeholder-zinc-400 w-40 outline-none flex-1" />
                     </div>
 
-                    <button type='submit' className='bg-lime-300 text-lime-950 rounded-lg px-5 py-2 font-medium flex items-center gap-2 hover:bg-lime-400'>
+                    <Button type='submit' variant="primary">
                         Convidar
                         <Plus className='size-5 ' />
-                    </button>
+                    </Button>
 
                 </form>
 
